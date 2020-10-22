@@ -1,8 +1,14 @@
-node('REDHAT')
-{
-    stage('scm')
-    {
+pipeline{
+    agent { label 'REDHAT' }
+Stages{
+    stage('Source')
+    steps{
         git 'https://github.com/practice1991/game-of-life.git'
     }
-
+}
+stage('Package'){
+    steps{
+        sh 'mvn package'
+    }
+}
 }
