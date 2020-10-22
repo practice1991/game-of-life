@@ -1,13 +1,13 @@
 pipeline {
-    agent {label 'REDHAT'}
+    agent { label 'REDHAT' }
     triggers { pollSCM('* * * * *') }
     stages {
-        stage('clone and compile'){
+        stage('clone and compile') {
             steps {
-                git branch: 'declarative'
+                git branch: 'declarative', 
                 url: 'https://github.com/practice1991/game-of-life.git'
-                sh 'mvn package'
-                }
+                sh 'mvn compile'
             }
         }
+    }
 }
