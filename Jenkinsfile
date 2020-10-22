@@ -1,6 +1,6 @@
 pipeline{
     agent { label 'REDHAT' }
-Stages{
+stages{
     stage('Source')
     steps{
         git 'https://github.com/practice1991/game-of-life.git'
